@@ -1,0 +1,100 @@
+SUCCESSIVE UMBRELLA SAMPLING CODE FOR NVT AND NPT ENSEMBLE
+SASWATI GANGULY
+JULY 10, 2014
+================================================================
+================================================================
+*************************************************************************
+
+SCRIPT TO RUN THE SIMULATION 
+=============================
+=============================
+RUN.sh : sh RUN.sh
+=============================
+=============================
+**************************************************************************
+
+
+PROGRAM FILES
+=============================
+=============================
+Codes_UMBRELLA
+POST_PROCESS
+=============================
+=============================
+**************************************************************************
+
+
+MAKING CHANGES IN THE PARAMETER FILES OF THE PROGRAM INSIDE "Codes_UMBRELLA"
+==============================================================================
+==============================================================================
+INITIAL_PARAMETERS.inc 
+========================================
+TO CHANGE THE FOLLOWING
+========================================
+1)NUMBER OF MC STEPS
+2)DATA COLLECTION STEPS
+3)DENSITY
+4)MAXIMUM ALLOWED PARTICLE DISPLACEMENT IN AN MC MOVE
+5)TEMPERATURE
+6)MAXIMUM ALLOWED VOLUME DEFORMATION IN A VOLUME CHANGE MC MOVE IN CASE OF NPT ENSEMBLE
+7)CONSTANT PRESSURE FOR NPT ENSEMBLE
+8)NON-AFFINE FIELD
+7)ELASTIC MODULUS OF THE HARMONIC SPRINGS
+9)CHOOSE ENSEMBLE : NVT OR NPT
+=========================================================================================
+=========================================================================================
+
+
+NOOFPARTICLES.inc
+==========================
+TO CHANGE THE FOLLOWING
+==========================
+1)TOTAL NUMBER OF PARTICLES IN THE SIMULATION BOX, CHANGE "NU"
+==========================================================================================
+==========================================================================================
+
+
+CELLLIST.inc
+==========================
+TO CHANGE THE FOLLOWING
+==========================
+1)FOR CHANGES IN THE TOTAL NUMBER OF PARTICLES, NUMBER OF CELLS ALONG X AND Y DIRECTIONS NEEDS CHANGE IN THE CELL LIST
+========================================================================================================================
+========================================================================================================================
+
+
+VERLETLIST.inc
+=================================
+TO CHANGE THE FOLLOWING
+=================================
+1)\sigma OF THE WCA INTERACTION AND/OR VERLET LIST CUT-OFF RADIUS
+======================================================================================
+======================================================================================
+
+
+UMBRELLA_SAMPLING.inc
+=======================================
+TO CHANGE THE FOLLOWING
+=======================================
+1)NUMBER OF UMBRELLA SAMPLING BEANS
+2)RANGE OF THE UMBRELLA SAMPLING ORDER PARAMETER
+=========================================================================
+=========================================================================
+****************************************************************************************************
+
+
+OUTPUT FILES GENERATED
+=========================================================================
+=========================================================================
+THE SCRIPT WILL GENERATE A FOLDER : RESULTS
+============================================
+FILES INSIDE RESULTS:COLUMNS
+============================================
+Icycle_Energy_Pressur : MC STEP, TOTAL ENERGY, TOTAL PRESSURE, ENERGY WCA, TOTAL NON-AFFINITY PARAMETER (\CHI), DENSITY
+Config                : MC STEP, PARTICLE INDEX, X-COORDINATE, Y-COORDINATE, PARTICLE \CHI 
+FConfig               : PARTICLE INDEX, X-COORDINATE, Y-COORDINATE, PARTICLE \CHI : FINAL CONFIGURATION
+Histo_UM              : UMBRELLA SAMPLNG BIN INDEX, LOWER BOUND, UPPER BOUND UMBRELLA SAMPLING BIN, HISTOGRAM 1, HISTOGRAM 2
+Normalized_PChi       : GLOBAL \CHI, RAW DATA, NORMALISED PROBABILITY DISTRIBUTION OF GLOBAL \CHI 
+================================================================================================================================
+================================================================================================================================
+***********************************************************************************************************************************
